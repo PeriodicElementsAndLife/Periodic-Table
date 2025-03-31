@@ -538,3 +538,7 @@ header {
 .info-text li {
     padding-bottom: 1%;
 }
+.eikonamagias {
+    max-width: 150%;
+    max-height: auto;
+}
