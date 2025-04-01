@@ -542,3 +542,7 @@ header {
     max-width: 150%;
     max-height: auto;
 }
+.eikonaparga video{
+    height: 300px
+    width: auto;
+}
