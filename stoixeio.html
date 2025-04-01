@@ -83,15 +83,16 @@
                 <div class="atom-varos">28</div>
                 </div>
             </div></div>
-        <div class="elementeik plhroforia c7 ar6" data-stoixeio="eikona">
-          <img src="./img/hydrogen.jpg" alt="" class="eikona">  </div>
+        <div class="elementeik plhroforia c7 ar6" data-stoixeio="eikonaparga">
+          <video src="./vidim2/guy talking with monkey.mp4" alt="" class="eikonaparga" controls> </video> </div>
+          
         <div class="elementeik plhroforia c7 ar8" data-stoixeio="eikonamagias">
-          <img src="./img/hydrogen.jpg" alt="" class="eikonamagias">  </div>
+          <video src="./vidim2/guy talking with monkey.mp4" alt="" class="deftvid eikonaparga" controls> </video> </div>
     </div>
 </div>
   </div>
   <div class="info-box">
-    <video src="./vidim2/guy talking with monkey.mp4" alt="" class="eikonaparga" controls> </video>
+    <img src="./img/hydrogen.jpg" alt="" class="eikona">  
     <div class="info-text">
         <h3 class="stoixeioonoma">Υδρογόνο</h3>
         <ul class="stoixeiotext">
@@ -141,9 +142,23 @@
             document.querySelector(".eikona").src="./img/" + elementDiv.getAttribute("data-stoixeio").toLowerCase() + ".jpg";
             document.querySelector(".eikonaparga").src="./vidim2/" + elementDiv.getAttribute("data-stoixeio").toLowerCase() + ".mp4";
           } else {
-            document.querySelector(".eikona").outerHTML=""
-            document.querySelector(".eikonaparga").outerHTML='<img src="./img/hydrogen.jpg" alt="" class="eikona">';
-            document.querySelector(".eikona").src="./img/" + elementDiv.getAttribute("data-stoixeio").toLowerCase() + ".jpg";
+            //document.querySelector(".eikona").outerHTML=""
+            //document.querySelector(".eikonaparga").outerHTML='<img src="./img/hydrogen.jpg" alt="" class="eikona">';
+            document.querySelector(".eikonaparga").outerHTML=''
+            //document.querySelector(".eikona").src="./img/" + elementDiv.getAttribute("data-stoixeio").toLowerCase() + ".jpg";
+            
+          }
+        })
+        .catch(error => {
+          console.log("Error accessing video:", error);
+        });
+        //deftero video
+        fetch(window.location.origin + window.location.pathname.replace(/\/[^/]*$/, "/") + 'vidim2/' + elementDiv.getAttribute("data-stoixeio").toLowerCase() + "2.mp4", { method: "HEAD" },{mode: 'no-cors'})
+        .then(response => {
+          if (response.ok) {
+            document.querySelector(".deftvid").src="./vidim2/" + elementDiv.getAttribute("data-stoixeio").toLowerCase() + "2.mp4";
+          } else {
+            document.querySelector(".deftvid").remove()
             
           }
         })
