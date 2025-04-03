@@ -58,6 +58,9 @@ header {
     grid-gap: 5px;
     grid-template-columns: repeat(9, 1fr);
 }
+video {
+    grid-row: span 2;
+}
 
 .element {
     position: relative;
